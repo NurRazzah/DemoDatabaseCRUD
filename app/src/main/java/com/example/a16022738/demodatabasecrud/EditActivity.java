@@ -38,6 +38,13 @@ public class EditActivity extends AppCompatActivity {
                 data.setNoteContent(etContent.getText().toString());
                 dbh.updateNote(data);
                 dbh.close();
+
+                Intent i = new Intent();
+                i.putExtra("type","update");
+
+                setResult(RESULT_OK, i);
+                finish();
+
             }
         });
 
